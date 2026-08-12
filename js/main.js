@@ -30,7 +30,38 @@ const PRICE_CATS = [
 
 const GAMES = () => (window.ZAGA_GAMES && window.ZAGA_GAMES.length ? window.ZAGA_GAMES : []);
 const CLUB = () => (Array.isArray(window.CLUB_IMAGES) ? window.CLUB_IMAGES : []);
+const GAME_IMGS = () => (Array.isArray(window.GAME_IMAGES) ? window.GAME_IMAGES : []);
 const REVIEWS = () => (window.ZAGA_REVIEWS && window.ZAGA_REVIEWS.length ? window.ZAGA_REVIEWS : []);
+
+/** Нормализация для сопоставления имени игры и файла */
+function normKey(s) {
+  return String(s || "")
+    .toLowerCase()
+    .replace(/\.(jpe?g|png|webp)$/i, "")
+    .replace(/[^a-z0-9а-яё]+/gi, "");
+}
+
+/**
+ * Найти обложку игры:
+ * 1) явный game.image если задан
+ * 2) авто-поиск в GAME_IMAGES по имени
+ */
+function resolveGameImage(game) {
+  if (game && game.image) return game.image;
+  const key = normKey(game && game.name);
+  if (!key) return "";
+  const list = GAME_IMGS();
+  // точное совпадение
+  let hit = list.find((img) => normKey(img.base) === key);
+  if (hit) return hit.src;
+  // частичное: beatsaber ≈ beat saber, halflifealyx ≈ half life
+  hit = list.find((img) => {
+    const b = normKey(img.base);
+    if (b.length < 4) return false;
+    return key.includes(b) || b.includes(key);
+  });
+  return hit ? hit.src : "";
+}
 
 /** Все фото клуба из manifest */
 function getClubImages() {
@@ -222,7 +253,8 @@ function initScrollProgress() {
 }
 
 function coverHTML(game) {
-  const src = (game.image || "").trim();
+  // Авто: GAME_IMAGES по имени; иначе game.image; иначе fallback
+  const src = (resolveGameImage(game) || "").trim();
   if (!src) {
     return `<div class="game-cover"><div class="game-cover-fallback">${game.name}</div></div>`;
   }
