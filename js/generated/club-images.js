@@ -19,9 +19,9 @@ window.GAME_IMAGES = [
     "base": "beat saber"
   },
   {
-    "file": "Gorn.png",
-    "src": "assets/games/Gorn.png",
-    "base": "Gorn"
+    "file": "gorn.png",
+    "src": "assets/games/gorn.png",
+    "base": "gorn"
   },
   {
     "file": "half life.jpg",
