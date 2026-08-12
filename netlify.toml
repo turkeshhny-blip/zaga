@@ -1,8 +1,0 @@
-# Static site — publish from project root (no dist/)
-[build]
-  command = "npm run assets"
-  publish = "."
-
-# Do not fail if optional folders are empty
-[build.environment]
-  NODE_VERSION = "20"
