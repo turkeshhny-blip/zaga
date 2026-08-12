@@ -1,0 +1,11 @@
+{
+  "name": "zaga-game",
+  "private": true,
+  "scripts": {
+    "assets": "node scripts/generate-assets.js",
+    "predev": "node scripts/generate-assets.js",
+    "dev": "npx --yes serve -l 3000",
+    "prebuild": "node scripts/generate-assets.js",
+    "build": "node scripts/generate-assets.js && echo \"Static site — assets generated. Deploy the zaga-game folder.\""
+  }
+}

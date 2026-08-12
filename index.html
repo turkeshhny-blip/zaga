@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZAGA GAME — Клуб виртуальной реальности в Бобруйске</title>
+  <meta name="description" content="ZAGA GAME — клуб VR в Бобруйске. Полное погружение без проводов, до 10 игроков, 180 м² арена. Beat Saber, Half-Life: Alyx и другие. Ул. Карла Либкнехта, 6.">
+  <meta property="og:title" content="ZAGA GAME — VR-клуб в Бобруйске">
+  <meta property="og:description" content="Погрузись в виртуальную реальность. До 10 игроков. 180 м² арена.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image" content="assets/logo.svg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":"ZAGA GAME","description":"Клуб виртуальной реальности в Бобруйске","address":{"@type":"PostalAddress","streetAddress":"ул. Карла Либкнехта, 6, 4 этаж","addressLocality":"Бобруйск","addressCountry":"BY"},"telephone":"+375299993393","openingHours":"Mo-Su 10:00-22:00","geo":{"@type":"GeoCoordinates","latitude":53.138445,"longitude":29.234984}}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+<div id="preloader">
+  <div class="preloader-text"><span id="preloader-type"></span><span id="preloader-cursor" class="cursor"></span></div>
+</div>
+
+<header class="header">
+  <a href="#hero" class="logo-link" aria-label="ZAGA GAME">
+    <img src="assets/logo.svg" alt="ZAGA GAME" class="logo-img" width="90" height="26">
+  </a>
+  <nav>
+    <ul class="nav-desktop">
+      <li><a href="#intro">О клубе</a></li>
+      <li><a href="#games">Игры</a></li>
+      <li><a href="#prices">Цены</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+  </nav>
+  <div class="header-right">
+    <button id="sound-toggle" class="sound-toggle" aria-label="Звук" type="button">🔊</button>
+    <a href="tel:+375299993393" class="btn-header">Забронировать</a>
+    <button id="burger" class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div id="menu-overlay" class="menu-overlay"></div>
+<nav id="mobile-menu" class="mobile-menu" aria-label="Меню">
+  <a href="#intro">О клубе</a>
+  <a href="#games">Игры</a>
+  <a href="#prices">Цены</a>
+  <a href="#contacts">Контакты</a>
+  <a href="tel:+375299993393" class="mobile-book">Забронировать</a>
+</nav>
+
+<div class="fab-book"><a href="tel:+375299993393">Забронировать</a></div>
+
+<main>
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-logo-wrap" id="hero-logo">
+          <img src="assets/logo.svg" alt="ZAGA GAME" width="200" height="120">
+        </div>
+        <h1 class="hero-title">VR.<br><em>Игры. Эмоции.</em></h1>
+        <p class="hero-desc">Клуб виртуальной реальности в Бобруйске. Без проводов. Полное погружение.</p>
+        <div class="hero-meta">
+          <span>до 10 игроков</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span>180 м²</span>
+        </div>
+        <div class="hero-actions">
+          <a href="tel:+375299993393" class="btn-primary">Забронировать</a>
+          <a href="#intro" class="btn-ghost">О клубе</a>
+        </div>
+      </div>
+      <div class="hero-visual" id="hero-visual">
+        <!-- photo injected when CLUB_IMAGES available -->
+        <div class="hero-visual-fallback" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section id="intro" class="intro">
+    <div class="wrap">
+      <div class="intro-grid">
+        <h2 class="intro-headline fade-up">
+          Здесь<br>реальность<br>меняется
+        </h2>
+        <div class="intro-side fade-up">
+          <p>Современный VR-клуб в центре Бобруйска. Полная свобода движений, топовые игры и эмоции, которые сложно передать словами.</p>
+          <p class="intro-hours">Открыты ежедневно с 10:00 до 22:00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATMOSPHERE -->
+  <section id="atmosphere" class="atmosphere" hidden>
+    <div class="wrap">
+      <h2 class="atm-headline fade-up">Не просто игра.<br>Больше эмоций.</h2>
+      <div id="atmosphere-grid" class="atmosphere-grid fade-up"></div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why" class="why">
+    <div class="wrap">
+      <h2 class="h2 fade-up">Почему ZAGA GAME</h2>
+      <div class="why-list">
+        <div class="why-item fade-up">
+          <h3>Полное погружение</h3>
+          <p>Без проводов и ограничений. Свобода движений по всей арене.</p>
+        </div>
+        <div class="why-item fade-up">
+          <h3>Команда до 10 человек</h3>
+          <p>Играйте вместе — друзья, коллеги, день рождения.</p>
+        </div>
+        <div class="why-item fade-up">
+          <h3>Топовые VR-игры</h3>
+          <p>Beat Saber, Half-Life: Alyx, Pavlov VR, GORN и другие.</p>
+        </div>
+        <div class="why-item fade-up">
+          <h3>Новый опыт</h3>
+          <p>180 м² пространства и библиотека хитов VR — от ритма до шутеров.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAMES -->
+  <section id="games" class="games">
+    <div class="wrap">
+      <h2 class="h2 fade-up">Во что играем</h2>
+      <div class="games-layout">
+        <div class="game-list fade-up" id="game-list" role="listbox" aria-label="Список игр"></div>
+        <div class="game-featured fade-up" id="game-featured">
+          <div class="game-cover-slot"></div>
+          <div class="game-featured-index"><span id="gf-index">01</span> / 05</div>
+          <h3 id="gf-name">Beat Saber</h3>
+          <p id="gf-desc">Руби световые блоки под музыку. Идеальный старт в VR.</p>
+          <div class="game-tags" id="gf-tags">
+            <span>Ритм-игра</span><span>8+</span><span>1 игрок</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICES -->
+  <section id="prices" class="prices">
+    <div class="wrap">
+      <h2 class="h2 fade-up">Цены</h2>
+      <p class="lead fade-up">Выбери формат и бронируй.</p>
+      <div class="price-switch fade-up" id="day-switch">
+        <button type="button" data-day="weekday" class="active">Будни</button>
+        <button type="button" data-day="weekend">Выходные</button>
+      </div>
+      <div class="price-tabs-extra fade-up" id="price-cats"></div>
+      <div class="price-blocks fade-up" id="price-blocks"></div>
+      <p class="price-note fade-up">Выходные и праздничные дни — по тарифу «Выходные». Цены в белорусских рублях.</p>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="reviews" hidden>
+    <div class="wrap">
+      <h2 class="h2 fade-up">Отзывы</h2>
+      <div id="reviews-rating" class="reviews-rating fade-up" hidden></div>
+      <div id="reviews-list" class="reviews-list"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-book" id="book">
+    <div class="wrap">
+      <h2 class="h2 fade-up">Готов погрузиться?</h2>
+      <p class="lead fade-up">Позвони — подберём время под твою компанию.</p>
+      <a href="tel:+375299993393" class="btn-primary fade-up">Забронировать</a>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section id="contacts" class="contacts">
+    <div class="wrap">
+      <div class="contacts-grid">
+        <div class="fade-up">
+          <p class="contact-city">Бобруйск</p>
+          <div class="contact-rows">
+            <div class="contact-row">
+              <strong>Адрес</strong>
+              <a href="https://yandex.ru/maps/?pt=29.234984,53.138445&z=17&l=map" target="_blank" rel="noopener noreferrer">ул. Карла Либкнехта, 6, 4 этаж</a>
+            </div>
+            <div class="contact-row">
+              <strong>Телефон</strong>
+              <a href="tel:+375299993393">+375 (29) 999-33-93</a>
+            </div>
+            <div class="contact-row">
+              <strong>График</strong>
+              <span>Пн–Вс 10:00–22:00</span>
+            </div>
+          </div>
+          <a href="tel:+375299993393" class="btn-primary">Забронировать</a>
+        </div>
+        <div class="fade-up">
+          <div class="map-wrap">
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=29.234984%2C53.138445&z=17&pt=29.234984,53.138445,pm2rdm&l=map" allowfullscreen loading="lazy" title="Карта ZAGA GAME"></iframe>
+          </div>
+          <div class="map-actions">
+            <a href="https://yandex.ru/maps/?pt=29.234984,53.138445&z=17&l=map" target="_blank" rel="noopener noreferrer">Открыть карту</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <strong>ZAGA GAME</strong>
+    Бобруйск
+  </div>
+  <p class="footer-copy">© 2026</p>
+  <div class="footer-links">
+    <a href="tel:+375299993393">Позвонить</a>
+  </div>
+</footer>
+
+<script src="js/generated/club-images.js"></script>
+<script src="js/games.js"></script>
+<script src="js/reviews.js"></script>
+<script src="js/preloader.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
