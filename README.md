@@ -10,7 +10,7 @@
 - `assets/logo.svg` — логотип
 
 ## Запуск
-Открой `index.html` или залей на Netlify / GitHub Pages.
+Открой `index.html` локально или опубликуй через GitHub Pages.
 
 ## Данные
 Цены и игры — массивы в `js/main.js`.
